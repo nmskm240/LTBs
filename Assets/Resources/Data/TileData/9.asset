@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c75be5fa76f56a49941500f01b260df, type: 3}
+  m_Name: 9
+  m_EditorClassIdentifier: 
+  id: 9
+  name: "\u4EA4\u6613\u6240"
+  abilityText: "\u4EFB\u610F\u306E\u8CC7\u6E902\u3064\u3092\u4EFB\u610F\u306E\u8CC7\u6E90\uFF12\u3064\u306B\u4EA4\u63DB\u3059\u308B\u3002"
+  points: 5
+  buildCost: 000000000000000000000000
+  abilityCost: 0600000006000000
+  abilityProfit: 0600000006000000
