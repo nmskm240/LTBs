@@ -7,7 +7,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 using ExitGames.Client.Photon;
-using LTBs.Game.UI;
+using LTBs.UI;
 using LTBs.Game.Component;
 using LTBs.Network.CustomProperties.Rooms;
 using LTBs.Network.RaiseEvents;

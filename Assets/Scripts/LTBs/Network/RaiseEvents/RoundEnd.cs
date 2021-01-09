@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 using ExitGames.Client.Photon;
-using LTBs.Game.UI;
+using LTBs.UI;
 using LTBs.Network.CustomProperties.Rooms;
 using LTBs.Network.CustomProperties.Players;
 using LTBs.System;

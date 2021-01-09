@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 using LTBs.Game;
-using LTBs.Game.UI;
+using LTBs.UI;
 using LTBs.Game.Component;
 using LTBs.Network.CustomProperties.Players;
 using LTBs.Network.CustomProperties.Rooms;

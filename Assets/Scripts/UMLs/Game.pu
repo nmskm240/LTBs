@@ -9,29 +9,24 @@ package LTBs
             class Worker
             {
                 -owner:Player
-                +<<parametr>>Pos:Vector2{get;set}
-                +<<parametr>>Owner:Player{get;set}
+                +<<property>>Pos:Vector2
+                +<<property>>Owner:Player
                 +GetAroundBuildings():List<Tile>
             }
             class Tile
             {
-                -id:string
-                -name:string
-                -abilityText:string
-                -points:int
-                -buildCost:List<ResourceType>
-                +<<parametr>>Id:string{get only}
-                +<<parametr>>Name:string{get only}
-                +<<parametr>>abilityText:string{get only}
-                +<<parametr>>Points:int{get only}
-                +<<parametr>>Pos:Vector2{get and set}
-                +<<parametr>>Owner:Player{get and set}
-                +<<parametr>>IsBuilded:bool{get only}
-                +<<parametr>>IsGrassLand:bool{get only}
-                +<<parametr>>IsPlayerPresent:bool{get only}
-                +<<parametr>>BulidCost:List<ResourceType>{get only}
-                +<<parametr>>AbilityCost:List<ResourceType>{get only}
-                +<<parametr>>AbilityProfit:List<ResourceType>{get only}
+                +<<property>>Id:string{private set}
+                +<<property>>Name:string{private set}
+                +<<property>>abilityText:string{private set}
+                +<<property>>Points:int{private set}
+                +<<property>>Pos:Vector2
+                +<<property>>Owner:Player
+                +<<property>>IsBuilded:bool{get only}
+                +<<property>>IsGrassLand:bool{get only}
+                +<<property>>IsPlayerPresent:bool{get only}
+                +<<property>>BulidCost:List<ResourceType>{private set}
+                +<<property>>AbilityCost:List<ResourceType>{private set}
+                +<<property>>AbilityProfit:List<ResourceType>{private set}
                 +Init():void
                 +<<delegate>>Ability():void
                 +NormalAbility:Ability
@@ -48,13 +43,13 @@ package LTBs
                 -abilityText:string
                 -buildCost:List<ResourceType>
                 -points:int
-                +<<parametr>>Id:string{get only}
-                +<<parametr>>Name:string{get only}
-                +<<parametr>>AbilityText:string{get only}
-                +<<parametr>>BulidCost:List<ResourceType>{get only}
-                +<<parametr>>AbilityCost:List<ResourceType>{get only}
-                +<<parametr>>AbilityProfit:List<ResourceType>{get only}
-                +<<parametr>>Points:int{get only}
+                +<<property>>Id:string{get only}
+                +<<property>>Name:string{get only}
+                +<<property>>AbilityText:string{get only}
+                +<<property>>BulidCost:List<ResourceType>{get only}
+                +<<property>>AbilityCost:List<ResourceType>{get only}
+                +<<property>>AbilityProfit:List<ResourceType>{get only}
+                +<<property>>Points:int{get only}
             }
             class Board
             class Resource
@@ -69,155 +64,7 @@ package LTBs
             }
             class TileController
         }
-        package UI
-        {
-            class BoardSizeSelecter
-            class BoardSelecter
-            class BuildableListViewer
-            {
-                -Contents:GameObjct
-                -Nodes:List<BuildingNode>
-            }
-            class BuildButton
-            {
-                +OnClick():void
-            }
-            class BuildingAbilityListViewer
-            {
-                -Contents:GameObjct
-                -Nodes:List<BuildingNode>
-                +Shoe():void
-            }
-            class BuildingNode
-            {
-                -buildingName:Text
-                -buildingAbilityInfo:Text
-                -owner:Text
-                -ownerNameObj:GameObject
-                -executeButton:Button
-                -tile:Tile
-                +<<parametr>>Tile:Tile{set only}
-                +<<parametr>>TileId:int{get only}
-                +<<parametr>>OwnerName:string{set only}
-                +<<parametr>>OwnerNameObj:GameObject{get only}
-                +<<parametr>>ExecuteButton:Button{get only}
-                +<<parametr>>Executed:bool{get and private set}
-                +ManagedUpdate():void
-                +AbiliityActivate():void
-            }
-            class BuildingNodeFactory
-            class CancelButton
-            {
-                +OnClick():void
-            }
-            class ColorFactory
-            class CompletButton
-            {
-                +OnClick():void
-            }
-            class CompletedMarkFactory
-            class ExchangeSelecter
-            {
-                -PResourceDds:GameObject
-                -EResourceDds:GameObject
-                -ExectueButton:Button
-                -ExchangeResource:List<ResourceType>
-                -PlayerResource:List<ResourceType>
-                +Show():void
-                +OnValueChnaged():void
-                +Exchange():void
-            }
-            enum ExchangeType
-            class FinishButton
-            {
-                OnClick():void
-            }
-            class FoodDistributionNode
-            {
-                -WorkerImage:Image
-                -FishButton:Button
-                -WheatButton:Button
-                -go:GameObject
-                +<<parametr>>IsDistributed:bool{get and private set}
-                -CanDistribution(resourceType:ResourceType):bool
-                -Distribution(resourceType:ResourceType):void
-                +NonDistribution():void
-                +ManagedUpdate():void
-                +Reset():void
-            }
-            class FoodDistributionNodeFactory
-            class FoodDistributionSelecter
-            {
-                -Contents:GameObject
-                -Nodes:List<FoodDistributionNode>
-                +Show():void
-            }
-            class GameOptionsViewer
-            class GamePlayerFactory
-            class GamePlayerListViewer
-            class GamePlayerNode
-            {
-                -inChargePlayer:Player
-                -outline:Outline
-                -playerName:Text
-                -wood:ResourceCounter
-                -stone:ResourceCounter
-                -fish:ResourceCounter
-                -wheat:ResourceCounter
-                -money:ResourceCounter
-                -point:ResourceCounter
-                -resource:Dictionary<ResourceType, int>
-                +PlayerClor:Color
-                +<<parametr>>InChargePlayer:Player{set only}
-                +<<parametr>>PlayerResource:Dictionary<ResourceType, int>{get only}
-            }
-            class PlayerListViewer
-            {
-                -Contents:GameObject
-                -RoomNameText:Text
-                -DestroyAll():void
-                -CreateAllPlayerNode:void
-            }
-            class PlayerNode
-            {
-                -PlayerNameText:Text
-                +<<parametr>>PlayerName:string{set only}
-            }
-            class PlayerNodeFactory
-            class RankingViewer
-            {
-                -Contents:GameObject
-                -CreateRanking():List<Player>
-                +Show():void
-            }
-            class ResourceCounter
-            {
-                -Index:Text
-                +<<parametr>>Count:int{get and private set}
-                -SetText():void
-                +Set(index:int):void
-            }
-            class ResourceRoute
-            {
-                -PlayerNodePos:Dictionary<int, List<Vector3>>
-                +SearchPlayerNodePos(playerCount:int):List<Vector3>
-            }
-            class RoundCounter
-            {
-                -NowRoundText:Text
-                -MaxRoundText:Text
-            }
-            class TurnMoveSelecter
-            {
-                -BuildButton:GameObject
-                -WorkButton:GameObject
-                -CancelButton:GameObject
-            }
-            class WorkButton
-            {
-                OnClick():void
-            }
-        }
+
         enum ResourceType
         class TileFactory
         class ResourceFactory
@@ -256,6 +103,155 @@ package LTBs
             class RoundEnd
         }
     }
+    package UI
+    {
+        class BoardSizeSelecter
+        class BoardSelecter
+        class BuildableListViewer
+        {
+            -Contents:GameObjct
+            -Nodes:List<BuildingNode>
+        }
+        class BuildButton
+        {
+            +OnClick():void
+        }
+        class BuildingAbilityListViewer
+        {
+            -Contents:GameObjct
+            -Nodes:List<BuildingNode>
+            +Shoe():void
+        }
+        class BuildingNode
+        {
+            -buildingName:Text
+            -buildingAbilityInfo:Text
+            -owner:Text
+            -ownerNameObj:GameObject
+            -executeButton:Button
+            -tile:Tile
+            +<<property>>Tile:Tile{set only}
+            +<<property>>TileId:int{get only}
+            +<<property>>OwnerName:string{set only}
+            +<<property>>OwnerNameObj:GameObject{get only}
+            +<<property>>ExecuteButton:Button{get only}
+            +<<property>>Executed:bool{get and private set}
+            +ManagedUpdate():void
+            +AbiliityActivate():void
+        }
+        class BuildingNodeFactory
+        class CancelButton
+        {
+            +OnClick():void
+        }
+        class ColorFactory
+        class CompletButton
+        {
+            +OnClick():void
+        }
+        class CompletedMarkFactory
+        class ExchangeSelecter
+        {
+            -PResourceDds:GameObject
+            -EResourceDds:GameObject
+            -ExectueButton:Button
+            -ExchangeResource:List<ResourceType>
+            -PlayerResource:List<ResourceType>
+            +Show():void
+            +OnValueChnaged():void
+            +Exchange():void
+        }
+        enum ExchangeType
+        class FinishButton
+        {
+            OnClick():void
+        }
+        class FoodDistributionNode
+        {
+            -WorkerImage:Image
+            -FishButton:Button
+            -WheatButton:Button
+            -go:GameObject
+            +<<property>>IsDistributed:bool{get and private set}
+            -CanDistribution(resourceType:ResourceType):bool
+            -Distribution(resourceType:ResourceType):void
+            +NonDistribution():void
+            +ManagedUpdate():void
+            +Reset():void
+        }
+        class FoodDistributionNodeFactory
+        class FoodDistributionSelecter
+        {
+            -Contents:GameObject
+            -Nodes:List<FoodDistributionNode>
+            +Show():void
+        }
+        class GameOptionsViewer
+        class GamePlayerFactory
+        class GamePlayerListViewer
+        class GamePlayerNode
+        {
+            -inChargePlayer:Player
+            -outline:Outline
+            -playerName:Text
+            -wood:ResourceCounter
+            -stone:ResourceCounter
+            -fish:ResourceCounter
+            -wheat:ResourceCounter
+            -money:ResourceCounter
+            -point:ResourceCounter
+            -resource:Dictionary<ResourceType, int>
+            +PlayerClor:Color
+            +<<property>>InChargePlayer:Player{set only}
+            +<<property>>PlayerResource:Dictionary<ResourceType, int>{get only}
+        }
+        class PlayerListViewer
+        {
+            -Contents:GameObject
+            -RoomNameText:Text
+            -DestroyAll():void
+            -CreateAllPlayerNode:void
+        }
+        class PlayerNode
+        {
+            -PlayerNameText:Text
+            +<<property>>PlayerName:string{set only}
+        }
+        class PlayerNodeFactory
+        class RankingViewer
+        {
+            -Contents:GameObject
+            -CreateRanking():List<Player>
+            +Show():void
+        }
+        class ResourceCounter
+        {
+            -Index:Text
+            +<<property>>Count:int{get and private set}
+            -SetText():void
+            +Set(index:int):void
+        }
+        class ResourceRoute
+        {
+            -PlayerNodePos:Dictionary<int, List<Vector3>>
+            +SearchPlayerNodePos(playerCount:int):List<Vector3>
+        }
+        class RoundCounter
+        {
+            -NowRoundText:Text
+            -MaxRoundText:Text
+        }
+        class TurnMoveSelecter
+        {
+            -BuildButton:GameObject
+            -WorkButton:GameObject
+            -CancelButton:GameObject
+        }
+        class WorkButton
+        {
+            OnClick():void
+        }
+    }
     package System
     {
         class Builder
@@ -267,7 +263,7 @@ package LTBs
         }
         enum PlayerMoveType
         class TurnAndRoundManager
-        class TurnCycle 
+        class TurnCycle
     }
 }
 

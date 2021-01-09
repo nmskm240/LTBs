@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
-using LTBs.Game.UI;
+using LTBs.UI;
 using LTBs.Network.CustomProperties.Players;
 
 namespace LTBs.Game.Component

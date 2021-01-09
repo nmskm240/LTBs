@@ -8,7 +8,7 @@ using Photon.Pun.UtilityScripts;
 using ExitGames.Client.Photon;
 using LTBs.Game;
 using LTBs.Game.Component;
-using LTBs.Game.UI;
+using LTBs.UI;
 using LTBs.System;
 using LTBs.Network.RaiseEvents;
 using LTBs.Network.CustomProperties.Players;
